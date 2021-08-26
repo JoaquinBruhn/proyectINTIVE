@@ -11,7 +11,7 @@ function first52(){
             let users = data.results;
             console.log(users);
 
-            let searchedResult = `<h1>Users in the platform</h1>`
+            let searchedResult = ""
 
             let i = 0
             //framework for the "forEach loop"
@@ -29,7 +29,7 @@ function first52(){
                     <div class="card mt-4 bg-light">
                         <ul class="list-group">
                             <li class="list-group-item"><h3>Name: ${lists.name.first} ${lists.name.last}</h3></li>
-                            <li class="list-group-item"><img src="${lists.picture.large}"></li>
+                            <li class="list-group-item"><img src="${lists.picture.medium}"></li>
                             <li class="list-group-item">City: ${lists.location.city}</li>
                             <li class="list-group-item">Country: ${lists.location.country}</li>
                         </ul>
@@ -46,8 +46,8 @@ function first52(){
                 };
             });
 
-            document.getElementById('searchedResult').innerHTML = searchedResult;
+            document.getElementById('searchedResult').innerHTML += searchedResult;
         })
 }
 let boton = document.getElementById("moreUsers")
-    boton.addEventListener("click",first52)
+    boton.addEventListener("click", first52)
