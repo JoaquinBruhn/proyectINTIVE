@@ -1,4 +1,5 @@
 //creating the function for the first 50 users
+first52()
 function first52(){
     fetch("https://randomuser.me/api/?results=52")
         .then(res =>res.json())
@@ -8,8 +9,9 @@ function first52(){
             // console.log(users);
 
             let users = data.results;
+            console.log(users);
 
-            let searchedResult = "<h1>Users in the platform</h1>" 
+            let searchedResult = `<h1>Users in the platform</h1>`
 
             let i = 0
             //framework for the "forEach loop"
@@ -26,7 +28,7 @@ function first52(){
                 <div class="col-lg-3">
                     <div class="card mt-4 bg-light">
                         <ul class="list-group">
-                            <li class="list-group-item"><h2>Name: ${lists.name.first} ${lists.name.last}</h2></li>
+                            <li class="list-group-item"><h3>Name: ${lists.name.first} ${lists.name.last}</h3></li>
                             <li class="list-group-item"><img src="${lists.picture.large}"></li>
                             <li class="list-group-item">City: ${lists.location.city}</li>
                             <li class="list-group-item">Country: ${lists.location.country}</li>
@@ -47,4 +49,5 @@ function first52(){
             document.getElementById('searchedResult').innerHTML = searchedResult;
         })
 }
-first52()
+let boton = document.getElementById("moreUsers")
+    boton.addEventListener("click",first52)
