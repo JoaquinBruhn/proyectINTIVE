@@ -1,3 +1,4 @@
+let userInfo = [];
 //creating the function for the first 50 users
 first52()
 function first52(){
@@ -36,6 +37,7 @@ function first52(){
                     </div>
                 </div>
                 `
+                userInfo.push(users[i])
                 i=i+1;
                 //this if adds the closing div for the container and row every 4 loops
                 if (i % 4 == 0){
