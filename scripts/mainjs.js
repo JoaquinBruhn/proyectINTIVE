@@ -1,4 +1,6 @@
+//array wwith all the users displayed
 let usersDatabase = [];
+//variable that´s goint to turn into the ID of the user that was clicked and used as a reference in the index of usersDatabase[]
 let searchedUser
 
 let mainButton = document.getElementById("findUsers")
@@ -9,16 +11,14 @@ function first52(){
     fetch("https://randomuser.me/api/?results=52")
         .then(res =>res.json())
         .then(data=>{
-            //testing the fetch and seting it up to show the array with it´s users
-            // let users = data.results;
-            // console.log(users);
 
+            //testing the fetch and setting it up to show the array with it´s users
             let users = data.results;
             console.log(users);
 
             
             let i = 0
-            //framework for the "forEach loop"
+            //forEach loop that creates the HTML list of users along with filling up the array usersDatabase []
             users.forEach(function (lists) {
                 
                 document.getElementById(`temporalBtn`).innerHTML= ""
@@ -78,7 +78,7 @@ function first52(){
 
 function moreInfo(){
 
-    window.open("pages/moreInfo.html", "_blank");
+    // window.open("pages/moreInfo.html", "_blank");
 
     let detailedUserImage = `<img src="${usersDatabase[searchedUser].picture.large}" alt="User Image">`
     document.getElementById('detailedUserImage').innerHTML = detailedUserImage;
