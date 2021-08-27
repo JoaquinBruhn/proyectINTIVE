@@ -1,4 +1,5 @@
-let userInfo = [];
+let usersDatabase = [];
+let searchedUser
 //creating the function for the first 50 users
 first52()
 function first52(){
@@ -26,9 +27,8 @@ function first52(){
                 user.className = 'card mt-4 bg-light';
                 user.idName = `${i}`;
 
-                let dataSlot = document.createElement(`ul`)
-                dataSlot.className = `dataSlot`
 
+                //user individual data that´s going to be grouped up 
                 let userName = document.createElement(`li`);
                 userName.className = `list-group-item userName`;
                 userName.innerHTML = `<h3>Name: ${lists.name.first} ${lists.name.last}</h3>`;
@@ -36,10 +36,14 @@ function first52(){
                 let userImgSlot = document.createElement(`li`);
                 userImgSlot.className = `list-group-item thumbnailImg`;
 
-                    let userImgBtn =document.createElement(`button`)
-                    userImgBtn.className = `btn`
-                    userImgBtn.innerHTML = `<img src="${lists.picture.large}">`;
+                    let userImgBtn =document.createElement(`button`);
+                    userImgBtn.className = `btn moreInfoBtn`;
+                    userImgBtn.innerHTML = `<img src="${lists.picture.medium}">`;
                     userImgBtn.idName = `${i}`;
+                    userImgBtn.addEventListener(`click`,() => {
+                        searchedUser = userImgBtn.idName
+                        moreInfo()
+                    });
 
                     userImgSlot.appendChild(userImgBtn)
 
@@ -52,18 +56,22 @@ function first52(){
                 userCountry.innerHTML = `<h5>Country: ${lists.location.country}</h5>`;
 
                 //pushes each pulled user into an array with the position on the index matching the button ID
-                userInfo.push(users[i])
-
-                dataSlot.appendChild(userName)
-                dataSlot.appendChild(userImgSlot)
-                dataSlot.appendChild(userCity)
-                dataSlot.appendChild(userCountry)
+                usersDatabase.push(users[i])
                 i=i+1
-                user.appendChild(dataSlot)
+
+                user.appendChild(userName)
+                user.appendChild(userImgSlot)
+                user.appendChild(userCity)
+                user.appendChild(userCountry)
+                
                 mainSlot.appendChild(user)
                 searchedResult.appendChild(mainSlot)
             });
     })
 }
-let boton = document.getElementById("moreUsers")
-    boton.addEventListener("click", first52)
+
+
+function moreInfo(){
+
+    window.open("pages/moreInfo.html", "_blank");
+}
