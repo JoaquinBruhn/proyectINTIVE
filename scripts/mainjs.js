@@ -56,7 +56,8 @@ function first52(){
 // let boton = document.getElementById("moreUsers")
 //     boton.addEventListener("click", first52)
 
-// let button = document.getElementsByClassName("moreInfoBtn");
-// button.onclick = (button.namedItem.innerHTML) {
-//     console.log(button.namedItem.innerHTML)
-//     }
+const button = document.querySelector("moreInfoBtn")
+button.addEventListener("click",test)
+function test() {
+    console.log("hello")
+    }
