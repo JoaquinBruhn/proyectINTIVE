@@ -1,7 +1,10 @@
 let usersDatabase = [];
 let searchedUser
-//creating the function for the first 50 users
-first52()
+
+let mainButton = document.getElementById("findUsers")
+    mainButton.addEventListener("click", first52)
+
+//creating the function for that obtains 52 users
 function first52(){
     fetch("https://randomuser.me/api/?results=52")
         .then(res =>res.json())
@@ -18,6 +21,8 @@ function first52(){
             //framework for the "forEach loop"
             users.forEach(function (lists) {
                 
+                document.getElementById(`temporalBtn`).innerHTML= ""
+
 
                 //tags that contain the User Data
                 let mainSlot = document.createElement('div');
@@ -41,8 +46,9 @@ function first52(){
                     userImgBtn.innerHTML = `<img src="${lists.picture.medium}">`;
                     userImgBtn.idName = `${i}`;
                     userImgBtn.addEventListener(`click`,() => {
-                        searchedUser = userImgBtn.idName
+                        searchedUser = parseInt(userImgBtn.idName)
                         moreInfo()
+                    
                     });
 
                     userImgSlot.appendChild(userImgBtn)
@@ -70,12 +76,10 @@ function first52(){
     })
 }
 
-
 function moreInfo(){
-    let detailedUserImage = `<img src="${usersDatabase[searchedUser].picture.large}" alt="User Image">`
-    document.getElementById('detailedUserImage').innerHTML += detailedUserImage;
-
-
 
     window.open("pages/moreInfo.html", "_blank");
+
+    let detailedUserImage = `<img src="${usersDatabase[searchedUser].picture.large}" alt="User Image">`
+    document.getElementById('detailedUserImage').innerHTML = detailedUserImage;
 }
