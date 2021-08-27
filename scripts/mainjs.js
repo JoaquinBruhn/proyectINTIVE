@@ -16,23 +16,52 @@ function first52(){
             let i = 0
             //framework for the "forEach loop"
             users.forEach(function (lists) {
-                //this if adds the opening div for the container and row every 4 loops
+                
+
+                //tags that contain the User Data
+                let mainSlot = document.createElement('div');
+                mainSlot.className = 'col-lg-3';
+
                 let user = document.createElement('div');
-                user.className = 'col-lg-3';
+                user.className = 'card mt-4 bg-light';
                 user.idName = `${i}`;
 
-                let userName = document.createElement(`h3`);
-                userName.className = `userName`;
-                userName.textContent = `Name: ${lists.name.first} ${lists.name.last}`
+                let dataSlot = document.createElement(`ul`)
+                dataSlot.className = `dataSlot`
 
-                let userImg = document.createElement(`img`)
-                userImg.className =`img`
-                userImg.src = `${lists.picture.medium}`
+                let userName = document.createElement(`li`);
+                userName.className = `list-group-item userName`;
+                userName.innerHTML = `<h3>Name: ${lists.name.first} ${lists.name.last}</h3>`;
 
-                user.appendChild(userName)
-                user.appendChild(userImg)
+                let userImgSlot = document.createElement(`li`);
+                userImgSlot.className = `list-group-item thumbnailImg`;
+
+                    let userImgBtn =document.createElement(`button`)
+                    userImgBtn.className = `btn`
+                    userImgBtn.innerHTML = `<img src="${lists.picture.large}">`;
+                    userImgBtn.idName = `${i}`;
+
+                    userImgSlot.appendChild(userImgBtn)
+
+                let userCity = document.createElement(`li`);
+                userCity.className = `list-group-item userCity`;
+                userCity.innerHTML = `<h5>City: ${lists.location.city}</h5>`;
+
+                let userCountry = document.createElement(`li`);
+                userCountry.className = `list-group-item userCountry`;
+                userCountry.innerHTML = `<h5>Country: ${lists.location.country}</h5>`;
+
+                //pushes each pulled user into an array with the position on the index matching the button ID
+                userInfo.push(users[i])
+
+                dataSlot.appendChild(userName)
+                dataSlot.appendChild(userImgSlot)
+                dataSlot.appendChild(userCity)
+                dataSlot.appendChild(userCountry)
                 i=i+1
-                searchedResult.appendChild(user)
+                user.appendChild(dataSlot)
+                mainSlot.appendChild(user)
+                searchedResult.appendChild(mainSlot)
             });
     })
 }
