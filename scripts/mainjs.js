@@ -72,6 +72,10 @@ function first52(){
 
 
 function moreInfo(){
+    let detailedUserImage = `<img src="${usersDatabase[searchedUser].picture.large}" alt="User Image">`
+    document.getElementById('detailedUserImage').innerHTML += detailedUserImage;
+
+
 
     window.open("pages/moreInfo.html", "_blank");
 }
