@@ -35,18 +35,24 @@
             </div>
         </div>
     </header>
-    <h1>Users in the platform</h1>
-    <!-- inserting the fetch request on this div -->
-    <div id="searchedResult">
-
-    </div>
-    <!-- <br>
+    <br>
     <div class="container">
-        <div class="row justify-content-center">
-            <button class="btn btn-success" id="moreUsers">Next 52 users</button>
+        <!-- one time use button to bring all the users and create the array -->
+        <div class="row justify-content-center" id="temporalBtn">
+            <button class="btn btn-success" id="findUsers">Find 52 users</button>
         </div>
     </div>
-    <br> -->
+    <br>
+    <h1>Users in the platform</h1>
+    <!-- testing the data obtained from clicking -->
+    <div id="detailedUserImage"></div>
+    <!-- inserting the fetch request on this div -->
+    <div class="container">
+        <div class="row" id="searchedResult">
+
+        </div>
+    </div>
+    <footer>
     </footer>
     <script src="scripts/mainjs.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
