@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- installed node just to be able to use SASS for easier styling -->
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>User List</title>
 </head>
 <body>
     <header class="header__sticky__spaces">
@@ -25,16 +26,23 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
-                            1234
+                            test
                         </div>
                         <div class="col-lg-6">
-                            1234
+                            test
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+    <h1>Users in the platform</h1>
+    <!-- inserting the fetch request on this div -->
+    <div class="container">
+        <div class="row" id="searchedResult">
+
+        </div>
+    </div>
     <br>
     <div class="container">
         <!-- one time use button to bring all the users and create the array -->
@@ -43,15 +51,6 @@
         </div>
     </div>
     <br>
-    <h1>Users in the platform</h1>
-    <!-- testing the data obtained from clicking -->
-    <div id="detailedUserImage"></div>
-    <!-- inserting the fetch request on this div -->
-    <div class="container">
-        <div class="row" id="searchedResult">
-
-        </div>
-    </div>
     <footer>
     </footer>
     <script src="scripts/mainjs.js"></script>

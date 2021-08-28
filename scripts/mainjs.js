@@ -1,13 +1,17 @@
 //array wwith all the users displayed
 let usersDatabase = [];
 //variable that´s goint to turn into the ID of the user that was clicked and used as a reference in the index of usersDatabase[]
-let searchedUser
+let userID
+//count the amount of times the function users52 has been used and allows it to be reused multiple times so that the list of users is practicaly infinite
+let t = 0
+//used to asign an ID to the loaded users
+let i = 0
 
 let mainButton = document.getElementById("findUsers")
-    mainButton.addEventListener("click", first52)
+    mainButton.addEventListener("click", users52)
 
 //creating the function for that obtains 52 users
-function first52(){
+function users52(){
     //fetches the data from the site, the number can be altered from the link
     fetch("https://randomuser.me/api/?results=52")
         .then(res =>res.json())
@@ -16,18 +20,15 @@ function first52(){
             //testing the fetch and setting it up to show the array with it´s users
             let users = data.results;
             console.log(users);
-
             
-            let i = 0
+            
+
             //forEach loop that creates the HTML list of users along with filling up the array usersDatabase []
             users.forEach(function (lists) {
-                
-                //deleting the button to prevent users with the same ID (can be changed later to circumvent this problem)
-                document.getElementById(`temporalBtn`).innerHTML= ""
 
                 //tags that contain the User Data
                 let mainSlot = document.createElement('div');
-                mainSlot.className = 'col-lg-3';
+                mainSlot.className = 'col-md-3';
 
                 let user = document.createElement('div');
                 user.className = 'card mt-4 bg-light';
@@ -48,7 +49,7 @@ function first52(){
                     userImgBtn.innerHTML = `<img src="${lists.picture.medium}">`;
                     userImgBtn.idName = `${i}`;
                     userImgBtn.addEventListener(`click`,() => {
-                        searchedUser = parseInt(userImgBtn.idName)
+                        userID = parseInt(userImgBtn.idName)
                         moreInfo()
                     
                     });
@@ -63,25 +64,31 @@ function first52(){
                 userCountry.className = `list-group-item userCountry`;
                 userCountry.innerHTML = `<h5>Country: ${lists.location.country}</h5>`;
 
-                //pushes each pulled user into an array with the position on the index matching the button ID
-                usersDatabase.push(users[i])
+                //pushes each pulled user from the API into an array with the position on the index matching the button ID
+                usersDatabase.push(users[i - 52*t])
+                //Adds 1 to ibefore the next loop to give the next user a different ID the use of "t" represents the amount of times the function users52 has been used
                 i=i+1
 
+                //groups ul individual data inside a div with a card class
                 user.appendChild(userName)
                 user.appendChild(userImgSlot)
                 user.appendChild(userCity)
                 user.appendChild(userCountry)
                 
+                //gets the user into a Bootstrap column for easier editing of style
                 mainSlot.appendChild(user)
+                //All columns of searched users get into a bootstarp ROW DIV 
                 searchedResult.appendChild(mainSlot)
             });
+            //Count the amount of times the function users52 has been used
+            t = t + 1
     })
 }
 
 function moreInfo(){
 
-    sessionStorage.setItem("usersDatabase",JSON.stringify(usersDatabase))
-    sessionStorage.setItem("searchedUser",JSON.stringify(searchedUser))
+    //obtaining and saving the data from the pecific selected user in the array to save storage space
+    sessionStorage.setItem("searchedUser",JSON.stringify(usersDatabase[userID]))
 
     window.open("pages/moreInfo.html", "_blank");
 }
