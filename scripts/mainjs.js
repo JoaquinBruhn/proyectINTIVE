@@ -21,8 +21,8 @@ function first52(){
             //forEach loop that creates the HTML list of users along with filling up the array usersDatabase []
             users.forEach(function (lists) {
                 
+                //deleting the button to prevent users with the same ID (can be changed later to circumvent this problem)
                 document.getElementById(`temporalBtn`).innerHTML= ""
-
 
                 //tags that contain the User Data
                 let mainSlot = document.createElement('div');
@@ -40,8 +40,9 @@ function first52(){
 
                 let userImgSlot = document.createElement(`li`);
                 userImgSlot.className = `list-group-item thumbnailImg`;
-
-                    let userImgBtn =document.createElement(`button`);
+                    
+                    //setting the thmbnail IMG as a button and giving each button an event listener with a specific ID
+                    let userImgBtn = document.createElement(`button`);
                     userImgBtn.className = `btn moreInfoBtn`;
                     userImgBtn.innerHTML = `<img src="${lists.picture.medium}">`;
                     userImgBtn.idName = `${i}`;
@@ -78,8 +79,8 @@ function first52(){
 
 function moreInfo(){
 
-    // window.open("pages/moreInfo.html", "_blank");
+    sessionStorage.setItem("usersDatabase",JSON.stringify(usersDatabase))
+    sessionStorage.setItem("searchedUser",JSON.stringify(searchedUser))
 
-    let detailedUserImage = `<img src="${usersDatabase[searchedUser].picture.large}" alt="User Image">`
-    document.getElementById('detailedUserImage').innerHTML = detailedUserImage;
+    window.open("pages/moreInfo.html", "_blank");
 }
