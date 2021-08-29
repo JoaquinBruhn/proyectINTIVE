@@ -1,4 +1,4 @@
-//array wwith all the users displayed
+//array with all the loaded users displayed
 let usersDatabase = [];
 //variable that´s goint to turn into the ID of the user that was clicked and used as a reference in the index of usersDatabase[]
 let userID
@@ -38,7 +38,7 @@ function users52(){
                 //user individual data that´s going to be grouped up 
                 let userName = document.createElement(`li`);
                 userName.className = `list-group-item userName`;
-                userName.innerHTML = `<h3>Name: ${lists.name.first} ${lists.name.last}</h3>`;
+                userName.innerHTML = `<h4>Name: ${lists.name.first} ${lists.name.last}</h4>`;
 
                 let userImgSlot = document.createElement(`li`);
                 userImgSlot.className = `list-group-item thumbnailImg`;
@@ -51,7 +51,6 @@ function users52(){
                     userImgBtn.addEventListener(`click`,() => {
                         userID = parseInt(userImgBtn.idName)
                         moreInfo()
-                    
                     });
 
                     userImgSlot.appendChild(userImgBtn)
