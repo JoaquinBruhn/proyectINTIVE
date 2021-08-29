@@ -12,12 +12,12 @@
 <body>
     <header class="header__sticky__spaces">
         <nav class="navbar navbar-dark bg-dark ">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span>More Filters</span>
+            <button class="navbar-toggler btn btn-primary filterBtn__navbar" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="">More Filters</span>
               </button>
             <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
             </form>
         </nav>
         <!-- collapse of the nav bar -->
@@ -36,7 +36,13 @@
             </div>
         </div>
     </header>
-    <h1>Users in the platform</h1>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xs-12 d-flex align-items-center">
+                <h1 class="title__else  align-self-center">Users in the platform</h1>
+            </div>
+        </div>
+    </div>
     <!-- inserting the fetch request on this div -->
     <div class="container-fluid">
         <div class="row" id="searchedResult">
@@ -47,7 +53,7 @@
     <div class="container">
         <!-- one time use button to bring all the users and create the array -->
         <div class="row justify-content-center" id="temporalBtn">
-            <button class="btn btn-success" id="findUsers">Find 52 users</button>
+            <button class="btn btn-primary" id="findUsers">Find 52 users</button>
         </div>
     </div>
     <br>

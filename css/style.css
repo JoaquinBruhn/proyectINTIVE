@@ -1,6 +1,20 @@
-h1 {
-  color: black;
-  font-size: 48px; }
+.users__cards {
+  border-radius: 10px; }
+  .users__cards li {
+    background-color: #68e2e2;
+    border-color: #19523f; }
 
-p {
-  font-size: 48px; }
+.filterBtn__navbar {
+  color: black; }
+
+.btn-outline-primary {
+  color: white; }
+
+body {
+  background-color: #d1d1a1; }
+
+.title__else {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 48px;
+  font-weight: bold;
+  padding: 10px; }

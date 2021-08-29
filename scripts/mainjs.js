@@ -42,10 +42,10 @@ function moreInfo(){
 function createCard(userData,i){
     //tags that contain the User Data
     let mainSlot = document.createElement('div');
-    mainSlot.className = 'col-md-3';
+    mainSlot.className = 'col-xl-3 col-lg-6';
 
     user = document.createElement('div');
-    user.className = 'card mt-4 bg-light';
+    user.className = 'card-body mt-4 bg-light users__cards';
 
 
     //user individual data that´s going to be grouped up 
@@ -58,8 +58,8 @@ function createCard(userData,i){
         
         //setting the thmbnail IMG as a button and giving each button an event listener with a specific ID
         let userImgBtn = document.createElement(`button`);
-        userImgBtn.className = `btn moreInfoBtn`;
-        userImgBtn.innerHTML = `<img src="${userData.picture.medium}">`;
+        userImgBtn.className = `btn rounded-circle moreInfoBtn`;
+        userImgBtn.innerHTML = `<img class="img-fluid rounded-circle" src="${userData.picture.medium}">`;
         userImgBtn.idName = `${i}`;
         userImgBtn.addEventListener(`click`,() => {
             userID = parseInt(userImgBtn.idName)
