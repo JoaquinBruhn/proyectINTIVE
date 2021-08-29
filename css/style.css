@@ -4,13 +4,3 @@ h1 {
 
 p {
   font-size: 48px; }
-
-.header__sticky__spaces {
-  position: sticky;
-  top: 0px;
-  z-index: 99999; }
-
-.container__0margin__spaces {
-  margin-left: 0px;
-  margin-right: 0px;
-  padding: 0px; }
