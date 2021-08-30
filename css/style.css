@@ -1,11 +1,24 @@
+.cardPadding__cards {
+  padding-top: 80px; }
+
 .users__cards {
   border-radius: 10px; }
   .users__cards li {
     background-color: #68e2e2;
     border-color: #19523f; }
 
-.filterBtn__navbar {
-  color: black; }
+.searchedUser__card {
+  border-radius: 20px;
+  padding: 1.25rem 2rem 1.25rem 2rem; }
+  .searchedUser__card div {
+    background-color: #68e2e2; }
+
+.rowPadding__cards {
+  padding: 10px; }
+
+.navbar-dark .navbar-toggler {
+  color: white;
+  border-color: #007bff; }
 
 .btn-outline-primary {
   color: white; }
@@ -18,3 +31,8 @@ body {
   font-size: 48px;
   font-weight: bold;
   padding: 10px; }
+
+.placeholder__else {
+  color: white;
+  font-size: 16px;
+  font-weight: bold; }

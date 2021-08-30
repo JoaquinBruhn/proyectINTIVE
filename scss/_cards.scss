@@ -1,3 +1,7 @@
+.cardPadding__cards{
+    padding-top: 80px;
+}
+
 .users__cards{
     border-radius: 10px;
 
@@ -5,4 +9,16 @@
         background-color: rgb(104, 226, 226);
         border-color: rgb(25, 82, 63);
     }
+}
+.searchedUser__card{
+    border-radius: 20px;
+    padding: 1.25rem 2rem 1.25rem 2rem;
+
+    div{
+        background-color: rgb(104, 226, 226);
+    }
+}
+
+.rowPadding__cards{
+    padding: 10px;
 }
